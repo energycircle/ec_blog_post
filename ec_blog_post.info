@@ -171,3 +171,4 @@ features_exclude[field_instance][node-case_study-field_ref_case_study_blog] = no
 features_exclude[field_instance][node-service-field_ref_service_blog] = node-service-field_ref_service_blog
 features_exclude[field_instance][node-service_category-field_ref_serv_cat_blog] = node-service_category-field_ref_serv_cat_blog
 features_exclude[field_instance][node-service_group-field_ref_serv_group_blog] = node-service_group-field_ref_serv_group_blog
+project status url = https://github.com/energycircle/ec_blog_post.git
