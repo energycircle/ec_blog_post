@@ -21,6 +21,118 @@ function ec_blog_post_defaultconfig_features() {
 function ec_blog_post_defaultconfig_field_default_fields() {
   $fields = array();
 
+  // Exported field: 'node-article-field_ref_article_blog'.
+  $fields['node-article-field_ref_article_blog'] = array(
+    'field_config' => array(
+      'active' => 1,
+      'cardinality' => -1,
+      'deleted' => 0,
+      'entity_types' => array(),
+      'field_name' => 'field_ref_article_blog',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => 0,
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'blog_post' => 'blog_post',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => 0,
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'article',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => 0,
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'field_multiple_limit' => -1,
+            'field_multiple_limit_offset' => 0,
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 8,
+        ),
+        'featured' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'grouped_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'show_this_block' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_ref_article_blog',
+      'label' => 'Blog',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'current' => array(
+            'status' => 0,
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => 60,
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => 17,
+      ),
+    ),
+  );
+
   // Exported field: 'node-blog_post-body'.
   $fields['node-blog_post-body'] = array(
     'field_config' => array(
@@ -575,14 +687,14 @@ function ec_blog_post_defaultconfig_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-blog_post-field_ref_blog_article'.
-  $fields['node-blog_post-field_ref_blog_article'] = array(
+  // Exported field: 'node-panopoly_page-field_ref_page_blog'.
+  $fields['node-panopoly_page-field_ref_page_blog'] = array(
     'field_config' => array(
       'active' => 1,
-      'cardinality' => -1,
+      'cardinality' => 1,
       'deleted' => 0,
       'entity_types' => array(),
-      'field_name' => 'field_ref_blog_article',
+      'field_name' => 'field_ref_page_blog',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -610,7 +722,7 @@ function ec_blog_post_defaultconfig_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'article' => 'article',
+            'blog_post' => 'blog_post',
           ),
         ),
         'target_type' => 'node',
@@ -619,7 +731,7 @@ function ec_blog_post_defaultconfig_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'blog_post',
+      'bundle' => 'panopoly_page',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => 0,
@@ -634,7 +746,7 @@ function ec_blog_post_defaultconfig_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 5,
+          'weight' => 8,
         ),
         'featured' => array(
           'label' => 'above',
@@ -648,11 +760,17 @@ function ec_blog_post_defaultconfig_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'show_this_block' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 8,
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -662,8 +780,8 @@ function ec_blog_post_defaultconfig_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_ref_blog_article',
-      'label' => 'Article',
+      'field_name' => 'field_ref_page_blog',
+      'label' => 'Blog',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -687,14 +805,14 @@ function ec_blog_post_defaultconfig_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-blog_post-field_ref_blog_case_study'.
-  $fields['node-blog_post-field_ref_blog_case_study'] = array(
+  // Exported field: 'node-service-field_ref_service_blog'.
+  $fields['node-service-field_ref_service_blog'] = array(
     'field_config' => array(
       'active' => 1,
       'cardinality' => -1,
       'deleted' => 0,
       'entity_types' => array(),
-      'field_name' => 'field_ref_blog_case_study',
+      'field_name' => 'field_ref_service_blog',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -722,7 +840,7 @@ function ec_blog_post_defaultconfig_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'case_study' => 'case_study',
+            'blog_post' => 'blog_post',
           ),
         ),
         'target_type' => 'node',
@@ -731,11 +849,123 @@ function ec_blog_post_defaultconfig_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'blog_post',
+      'bundle' => 'service',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => 0,
-      'description' => 'Show this blog post on these case studies.',
+      'description' => 'Select the blog posts to display on this service page.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'field_multiple_limit' => -1,
+            'field_multiple_limit_offset' => 0,
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 5,
+        ),
+        'featured' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'grouped_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'show_this_block' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 2,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_ref_service_blog',
+      'label' => 'Blog',
+      'required' => 0,
+      'settings' => array(
+        'behaviors' => array(
+          'current' => array(
+            'status' => 0,
+          ),
+        ),
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => 60,
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => 11,
+      ),
+    ),
+  );
+
+  // Exported field: 'node-service_category-field_ref_serv_cat_blog'.
+  $fields['node-service_category-field_ref_serv_cat_blog'] = array(
+    'field_config' => array(
+      'active' => 1,
+      'cardinality' => -1,
+      'deleted' => 0,
+      'entity_types' => array(),
+      'field_name' => 'field_ref_serv_cat_blog',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => 0,
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'blog_post' => 'blog_post',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => 0,
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'service_category',
+      'default_value' => NULL,
+      'default_value_function' => '',
+      'deleted' => 0,
+      'description' => 'Select the blog posts to display on this service category page.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -764,18 +994,18 @@ function ec_blog_post_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 7,
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 2,
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_ref_blog_case_study',
-      'label' => 'Case Study',
+      'field_name' => 'field_ref_serv_cat_blog',
+      'label' => 'Blog',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -799,14 +1029,14 @@ function ec_blog_post_defaultconfig_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-blog_post-field_ref_blog_page'.
-  $fields['node-blog_post-field_ref_blog_page'] = array(
+  // Exported field: 'node-service_group-field_ref_serv_group_blog'.
+  $fields['node-service_group-field_ref_serv_group_blog'] = array(
     'field_config' => array(
       'active' => 1,
       'cardinality' => -1,
       'deleted' => 0,
       'entity_types' => array(),
-      'field_name' => 'field_ref_blog_page',
+      'field_name' => 'field_ref_serv_group_blog',
       'foreign keys' => array(
         'node' => array(
           'columns' => array(
@@ -834,7 +1064,7 @@ function ec_blog_post_defaultconfig_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'panopoly_page' => 'panopoly_page',
+            'blog_post' => 'blog_post',
           ),
         ),
         'target_type' => 'node',
@@ -843,11 +1073,11 @@ function ec_blog_post_defaultconfig_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'blog_post',
+      'bundle' => 'service_group',
       'default_value' => NULL,
       'default_value_function' => '',
       'deleted' => 0,
-      'description' => '',
+      'description' => 'Select the blog posts to display on this service group page.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -858,232 +1088,8 @@ function ec_blog_post_defaultconfig_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 10,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'grouped_teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'show_this_block' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_ref_blog_page',
-      'label' => 'Content Page',
-      'required' => 0,
-      'settings' => array(
-        'behaviors' => array(
-          'current' => array(
-            'status' => 0,
-          ),
-        ),
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'entityreference',
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'path' => '',
-          'size' => 60,
-        ),
-        'type' => 'entityreference_autocomplete',
-        'weight' => 13,
-      ),
-    ),
-  );
-
-  // Exported field: 'node-blog_post-field_ref_blog_serv_cat'.
-  $fields['node-blog_post-field_ref_blog_serv_cat'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => -1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_ref_blog_serv_cat',
-      'foreign keys' => array(
-        'node' => array(
-          'columns' => array(
-            'target_id' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
-      'indexes' => array(
-        'target_id' => array(
-          0 => 'target_id',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'entityreference',
-      'settings' => array(
-        'handler' => 'base',
-        'handler_settings' => array(
-          'behaviors' => array(
-            'views-select-list' => array(
-              'status' => 0,
-            ),
-          ),
-          'sort' => array(
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'service_category' => 'service_category',
-          ),
-        ),
-        'target_type' => 'node',
-      ),
-      'translatable' => 0,
-      'type' => 'entityreference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'blog_post',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'deleted' => 0,
-      'description' => 'Show this blog post on these service category pages',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'entityreference',
-          'settings' => array(
-            'field_multiple_limit' => -1,
-            'field_multiple_limit_offset' => 0,
-            'link' => FALSE,
-          ),
-          'type' => 'entityreference_label',
-          'weight' => 8,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'grouped_teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'show_this_block' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
           'weight' => 5,
         ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_ref_blog_serv_cat',
-      'label' => 'Service Category',
-      'required' => 0,
-      'settings' => array(
-        'behaviors' => array(
-          'current' => array(
-            'status' => 0,
-          ),
-        ),
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'entityreference',
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'path' => '',
-          'size' => 60,
-        ),
-        'type' => 'entityreference_autocomplete',
-        'weight' => 15,
-      ),
-    ),
-  );
-
-  // Exported field: 'node-blog_post-field_ref_blog_serv_group'.
-  $fields['node-blog_post-field_ref_blog_serv_group'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => -1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_ref_blog_serv_group',
-      'foreign keys' => array(
-        'node' => array(
-          'columns' => array(
-            'target_id' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
-      'indexes' => array(
-        'target_id' => array(
-          0 => 'target_id',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'entityreference',
-      'settings' => array(
-        'handler' => 'base',
-        'handler_settings' => array(
-          'behaviors' => array(
-            'views-select-list' => array(
-              'status' => 0,
-            ),
-          ),
-          'sort' => array(
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'service_group' => 'service_group',
-          ),
-        ),
-        'target_type' => 'node',
-      ),
-      'translatable' => 0,
-      'type' => 'entityreference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'blog_post',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'deleted' => 0,
-      'description' => 'Show this blog post on these service group pages.',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'entityreference',
-          'settings' => array(
-            'field_multiple_limit' => -1,
-            'field_multiple_limit_offset' => 0,
-            'link' => FALSE,
-          ),
-          'type' => 'entityreference_label',
-          'weight' => 7,
-        ),
         'featured' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1100,7 +1106,7 @@ function ec_blog_post_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 4,
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1110,8 +1116,8 @@ function ec_blog_post_defaultconfig_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_ref_blog_serv_group',
-      'label' => 'Service Group',
+      'field_name' => 'field_ref_serv_group_blog',
+      'label' => 'Blog',
       'required' => 0,
       'settings' => array(
         'behaviors' => array(
@@ -1130,140 +1136,22 @@ function ec_blog_post_defaultconfig_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => 14,
-      ),
-    ),
-  );
-
-  // Exported field: 'node-blog_post-field_ref_blog_service'.
-  $fields['node-blog_post-field_ref_blog_service'] = array(
-    'field_config' => array(
-      'active' => 1,
-      'cardinality' => -1,
-      'deleted' => 0,
-      'entity_types' => array(),
-      'field_name' => 'field_ref_blog_service',
-      'foreign keys' => array(
-        'node' => array(
-          'columns' => array(
-            'target_id' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
-      'indexes' => array(
-        'target_id' => array(
-          0 => 'target_id',
-        ),
-      ),
-      'locked' => 0,
-      'module' => 'entityreference',
-      'settings' => array(
-        'handler' => 'base',
-        'handler_settings' => array(
-          'behaviors' => array(
-            'views-select-list' => array(
-              'status' => 0,
-            ),
-          ),
-          'sort' => array(
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'service' => 'service',
-          ),
-        ),
-        'target_type' => 'node',
-      ),
-      'translatable' => 0,
-      'type' => 'entityreference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'blog_post',
-      'default_value' => NULL,
-      'default_value_function' => '',
-      'deleted' => 0,
-      'description' => 'Show this blog post on these service pages.',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'entityreference',
-          'settings' => array(
-            'field_multiple_limit' => -1,
-            'field_multiple_limit_offset' => 0,
-            'link' => FALSE,
-          ),
-          'type' => 'entityreference_label',
-          'weight' => 9,
-        ),
-        'featured' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'grouped_teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'show_this_block' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 6,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_ref_blog_service',
-      'label' => 'Service',
-      'required' => 0,
-      'settings' => array(
-        'behaviors' => array(
-          'current' => array(
-            'status' => 0,
-          ),
-        ),
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'entityreference',
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'path' => '',
-          'size' => 60,
-        ),
-        'type' => 'entityreference_autocomplete',
-        'weight' => 16,
+        'weight' => 19,
       ),
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Article');
+  t('Blog');
   t('Body');
-  t('Case Study');
   t('Category');
-  t('Content Page');
   t('Content link');
   t('Display date');
   t('Featured Image');
-  t('Service');
-  t('Service Category');
-  t('Service Group');
-  t('Show this blog post on these case studies.');
-  t('Show this blog post on these service category pages');
-  t('Show this blog post on these service group pages.');
-  t('Show this blog post on these service pages.');
+  t('Select the blog posts to display on this service category page.');
+  t('Select the blog posts to display on this service group page.');
+  t('Select the blog posts to display on this service page.');
   t('The display date for this blog post.');
   t('URL of the page to link this blog entry to.');
 
