@@ -5,9 +5,18 @@ package = ECFeatures - Core EXT
 version = 7.x-1.9
 project = ec_blog_post
 dependencies[] = ec_panopoly_page_overrides
+<<<<<<< HEAD
+dependencies[] = features
 dependencies[] = field_group
 dependencies[] = panelizer
 dependencies[] = taxonomy
+dependencies[] = uuid_features
+dependencies[] = views
+=======
+dependencies[] = field_group
+dependencies[] = panelizer
+dependencies[] = taxonomy
+>>>>>>> spintest
 dependencies[] = weight
 apps[screenshots][] = app/screenshot.png
 apps[logo] = app/logo.png
@@ -57,7 +66,10 @@ features[field_instance][] = node-service_category-field_ref_serv_cat_blog
 features[field_instance][] = node-service_group-field_ref_serv_group_blog
 features[node][] = blog_post
 features[panelizer_defaults][] = node:blog_post:default:default
+<<<<<<< HEAD
+=======
 features[panelizer_defaults][] = node:blog_post:default_one_column:default
+>>>>>>> spintest
 features[schemaorg][] = node-blog_post
 features[schemaorg][] = taxonomy_term-blog_categories
 features[taxonomy][] = blog_categories
@@ -141,7 +153,10 @@ features_exclude[dependencies][ec_a_b_testing_setup] = ec_a_b_testing_setup
 features_exclude[dependencies][ec_citypages] = ec_citypages
 features_exclude[dependencies][rdfx] = rdfx
 features_exclude[dependencies][views_content] = views_content
+<<<<<<< HEAD
+=======
 features_exclude[dependencies][uuid_features] = uuid_features
+>>>>>>> spintest
 features_exclude[features_overrides][field_instance.node-article-field_ref_article_blog.display|grouped_teaser] = field_instance.node-article-field_ref_article_blog.display|grouped_teaser
 features_exclude[features_overrides][panelizer_defaults.node:blog_post:default:default.display|content|new-e59aa6d9-c0b5-42fa-8fda-f448f54061c9|configuration|formatter_settings|image_style] = panelizer_defaults.node:blog_post:default:default.display|content|new-e59aa6d9-c0b5-42fa-8fda-f448f54061c9|configuration|formatter_settings|image_style
 features_exclude[features_overrides][panelizer_defaults.node:blog_post:default:default.display|content|new-e59aa6d9-c0b5-42fa-8fda-f448f54061c9|configuration|override_title_heading] = panelizer_defaults.node:blog_post:default:default.display|content|new-e59aa6d9-c0b5-42fa-8fda-f448f54061c9|configuration|override_title_heading
