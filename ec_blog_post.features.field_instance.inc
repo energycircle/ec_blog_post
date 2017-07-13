@@ -929,7 +929,7 @@ function ec_blog_post_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'featured' => array(
         'label' => 'above',
@@ -993,7 +993,7 @@ function ec_blog_post_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 7,
       ),
       'featured' => array(
         'label' => 'above',

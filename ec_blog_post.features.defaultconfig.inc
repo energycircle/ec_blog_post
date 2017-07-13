@@ -1476,7 +1476,7 @@ function ec_blog_post_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 6,
+          'weight' => 8,
         ),
         'featured' => array(
           'label' => 'above',
@@ -1586,7 +1586,7 @@ function ec_blog_post_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 5,
+          'weight' => 7,
         ),
         'featured' => array(
           'label' => 'above',
